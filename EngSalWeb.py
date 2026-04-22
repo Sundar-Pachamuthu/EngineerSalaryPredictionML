@@ -4,8 +4,14 @@ import numpy as np
 import joblib
 from sklearn.preprocessing import LabelEncoder
 
+st.set_page_config(
+    page_title="Engineer Salary Prediction & Career Tracker",
+    page_icon="💰",
+    layout="wide"
+)
 
 model = joblib.load("RanForParCol.joblib")
+
 
 
 page = st.sidebar.selectbox("Navigation", ["Predict Salary", "Career Tracker"])
