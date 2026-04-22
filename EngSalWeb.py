@@ -113,7 +113,7 @@ elif page == "Career Tracker":
                 for inten in user_data['Category']:
                     if inten == "Intenship":
                         due = user_data[user_data['Category'] == 'Intenship']
-                        exp= due['Years of Experience']
+                        exp= due['Years of Experience'].max()
                         st.write(f"### {username} done Intenship for period of {int(exp)} Years")
                     # else:
                     #     st.write(f"### {username} dosen't")
