@@ -192,6 +192,10 @@ elif page == "Career Tracker":
             else:
                 insert_data(username, password, date, discipline, experience, location, company, category, salary)
                 st.success("✅ Record Saved Permanently!")
+                conn = get_connection()
+                df_all = pd.read_sql_query("SELECT * FROM users", conn)
+                conn.close()
+                st.dataframe(df_all)
 
     # ========================================================
     # DELETE RECORD
